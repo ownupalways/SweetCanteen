@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+}
+
+
+/* WORK FOR TODAY 12TH JULY 2024 */
+
+header > nav .hoverContainer {
+    width: 180px;
+    position: relative;
+}
+
+header > nav .hoverContainer > button {
+    border: none;
+    outline: none;
+    background-color: green;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
+
+header > nav .hoverContainer > div {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+    background: white;
+    box-shadow: 4px  8px 16px black;
+    top: 60px;
+    line-height: 60px;
+}
+
+header > nav .hoverContainer:hover > div {
+    display: block;
+}
+
+
+header > nav .hoverContainer > div > a {
+    display: block;
+    text-decoration: none;
+    padding: 0 2px 0 10px;
+    color: purple;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header > nav .hoverContainer > div > a:hover {
+    background-color: rgb(86, 219, 86);
+    color: white;
+}
+
+/* DROPDOWN IN DROPDOWN */
+.hoverContainer > div > div {
+    width: 100%;
+    position: relative;
+}
+header > nav .hoverContainer > div > div > button {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    color: purple;
+    padding: 20px 20px 20px 10px;
+    text-align: left;
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+header > nav .hoverContainer > div > div > button:hover {
+    background-color: rgb(86, 219, 86);
+    color: white;
+}
+
+header > nav .hoverContainer > div > div> div {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    background: white;
+    box-shadow: 4px  8px 16px black;
+    transition: all 15s;
+    margin-left: 160px;
+    top: 0;
+    line-height: 40px;
+    /* overflow: hidden; */
+}
+
+header > nav .hoverContainer > div > div >div > a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: purple;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header > nav  .hoverContainer > div > div > div> a:hover {
+    background-color: rgb(86, 219, 86);
+    color: white;
+}
+
+header > nav .hoverContainer > div >:hover > div {
+    display: block;
+}
+
+.landingPageMain {
+    width: 95%;
+    display: flex;
+    justify-content:center;
+    padding-top: 8em;
+    /* margin: auto; */
+}
+
+.landingPageMain .landing-page-text {
+    padding: 5px 10px auto;
+    width: 550px;
+    margin: auto;
+    margin-top: 0;
+}
+
+.landingPageMain .landing-page-text> p {
+    padding: 0 40px 10px 10px;
+    line-height: 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.3em;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingPageMain > .landing-page-food .foodies{
+    display: flex;
+    flex-direction: column;
+    /* overflow-y:scroll; */
+}
+
+.landingPageMain > .landing-page-food .foodies .food {
+    display: flex;
+    border: 2px solid rgba(192, 184, 184, 0.5);
+    width: 600px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 8px 10px 8px gray;
+    margin-bottom: 25px;
+}
+
+.landingPageMain > .landing-page-food .foodies .food .little-tex {
+    font-size: 1em;
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    line-height: 25px;
+    padding: 40px;
+    word-spacing: 5px;
+}
+
+.landingPageMain > .landing-page-food .foodies .food .food-container {
+    flex: 3 0 190px;
+    border-radius: 0 8px 8px 0;
+}
+
+.landingPageMain > .landing-page-food .foodies .food .food-container img {
+    width: 100%;
+}
+
+
+/* Header and Menu Styling */
+header {
+    width: 100%;
+    background-color: coral;
+    position: fixed;
+}
+
+header > .logo {
+    padding: 0 50px;
+    line-height: 80px;
+    color: aliceblue;
+}
+
+header > nav {
+    float: right;
+    margin-right: 5em;
+    line-height: 80px;
+}
+
+header > nav > .checkBtn {
+    font-size: 1.4em;
+    color: aliceblue;
+    float: right;
+    line-height: 80px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+header > nav > #check {
+    display: none;
+}
+
+
+header nav ul > li, .hoverContainer {
+    display: inline-block;
+    margin-right: 1em;
+    /* width: 100px; */
+}
+
+header nav ul > li > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+header nav ul > li > a:hover {
+    background: white;
+}
+
+article {
+    width: 300px;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+article > section {
+    padding: 0.5em;
+}
+
+article > section > img {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+article > section > div {
+    padding: .5em;
+}
+/* Footer styling */
+footer {
+    width: 100%;
+    background-color: rgb(37, 36, 36);
+    position: fixed;
+    bottom: 0;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+footer section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.2em 2em;
+}
+
+footer details summary {
+    list-style: none;
+    font-size: 1.2em;
+    margin-bottom: .7em;
+}
+
+
+footer details > ul > li {
+    list-style: none;
+    line-height: 2;
+    font-size: 1em;
+}
+
+footer details ul > li > a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+footer details ul > li > a:hover {
+    letter-spacing: 2px;
+}
+
+footer details .media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 150px;
+}
+
+footer details ul li > a > i {
+    color: white;
+    font-size: 1.3em;
+    padding: 0.3em;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer details ul li > a > i:hover {
+    background: gray;
+}
+
+footer .author {
+    margin-right: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+footer .author > div
+
+/* LOGIN AND REGISTER LANDING PAGE */
+main {
+    position: relative;
+}
+
+.stagingOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(image/2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.stagingOne .btnContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+
+.stagingOne .btnContainer .btn {
+    width: 30em;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+}
+
+
+@media (max-width:992px) {
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+
+    header> .logo {
+        font-size: 30px;
+        padding-left:50px;
+    }
+
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+    }
+
+    header nav ul {
+        position: fixed;
+        max-width: 400px;
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 400px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    header nav ul li, div {
+        display: block;
+        margin-right: 0;
+        padding: 0;
+        width: 100%;
+    }
+   
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+     /* MAIN CONTENT DESIGN */
+     .landingPageMain{
+        width: 90%;
+        padding-bottom: 1.5em;
+        margin: auto;
+        padding-top: 6em;
+        gap: 20px;
+    }
+
+    .landingPageMain .landing-page-text {
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+
+    header> .logo {
+        font-size: 30px;
+        padding-left:50px;
+    }
+
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+    }
+
+    header nav ul {
+        position: fixed;
+        max-width: 400px;
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 300px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    header nav ul li, div {
+        display: block;
+        margin-right: 0;
+        padding: 0;
+        width: 100%;
+    }
+   
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    /* MAIN CONTENT DESIGN */
+    .landingPageMain{
+        width: 90%;
+        padding-bottom: 1.5em;
+        margin: auto;
+        padding-top: 6em;
+        gap: 20px;
+    }
+
+    .landingPageMain .landing-page-text {
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    header .logo {
+        font-size: 30px;
+        padding-left:10px;
+    }
+   
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+        margin-right: -60px;
+    }
+
+    header nav ul {
+        position: fixed;
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 50px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    /* MAIN CONTENT DESIGN */
+    .landingPageMain{
+        flex-direction: column;
+        width: 90%;
+        padding-bottom: 1.5em;
+        margin: auto;
+        padding-top: 6em;
+
+    }
+
+    .landingPageMain .landing-page-text {
+        order: 2;
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+        order: 1;
+        /* justify-content: center; */
+        /* padding: 5px; */
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 300px) {
+    header .logo {
+        font-size: 30px;
+        padding-left:10px;
+    }
+   
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+        margin-right: -60px;
+    }
+
+    header nav ul {
+        position: fixed;
+        /* max-width: 250px; */
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 50px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    .landingPageMain{
+        flex-direction: column;
+        width: 90%;
+        padding-bottom: 10.5em;
+        margin: auto;
+        padding-top: 6em;
+
+    }
+
+    .landingPageMain .landing-page-text {
+        order: 2;
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+        order: 1;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
