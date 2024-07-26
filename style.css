@@ -116,10 +116,9 @@ header > nav .hoverContainer > div >:hover > div {
 .landingPageMain {
     width: 95%;
     display: flex;
+    gap:20px;
     justify-content:center;
     padding-top: 8em;
-    padding-bottom: 12em;
-    /* margin: auto; */
 }
 
 .landingPageMain .landing-page-text {
@@ -145,7 +144,6 @@ header > nav .hoverContainer > div >:hover > div {
 .landingPageMain > .landing-page-food .foodies{
     display: flex;
     flex-direction: column;
-    /* overflow-y:scroll; */
 }
 
 .landingPageMain > .landing-page-food .foodies .food {
@@ -182,6 +180,7 @@ header {
     width: 100%;
     background-color: coral;
     position: fixed;
+    z-index: 1;
 }
 
 header > .logo {
@@ -251,12 +250,11 @@ article > section > img {
 article > section > div {
     padding: .5em;
 }
+
 /* Footer styling */
 footer {
     width: 100%;
     background-color: rgb(37, 36, 36);
-    position: fixed;
-    bottom: 0;
     color: white;
     transition: all 0.5s;
     cursor: pointer;
@@ -269,37 +267,36 @@ footer section {
     padding: 1.2em 2em;
 }
 
-footer details summary {
+footer section .details .summary {
     list-style: none;
     font-size: 1.2em;
     margin-bottom: .7em;
 }
 
-
-footer details > ul > li {
+footer section .details > ul > li {
     list-style: none;
     line-height: 2;
     font-size: 1em;
 }
 
-footer details ul > li > a {
+footer section .details ul > li > a {
     color: white;
     text-decoration: none;
     transition: all 0.5s;
 }
 
-footer details ul > li > a:hover {
+footer section .details ul > li > a:hover {
     letter-spacing: 2px;
 }
 
-footer details .media {
+footer section .details .media {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     width: 150px;
 }
 
-footer details ul li > a > i {
+footer section .details ul li > a > i {
     color: white;
     font-size: 1.3em;
     padding: 0.3em;
@@ -308,7 +305,7 @@ footer details ul li > a > i {
     border-radius: 5px;
 }
 
-footer details ul li > a > i:hover {
+footer section .details ul li > a > i:hover {
     background: gray;
 }
 
@@ -319,12 +316,40 @@ footer .author {
     gap: 5px;
 }
 
-footer .author > div
-
 /* LOGIN AND REGISTER LANDING PAGE */
 main {
     position: relative;
 }
+
+footer .arrowUp{
+    background-color: rgba(128, 128, 128, 0.1);
+    border: 2px solid rgba(71, 66, 66, 0.3);
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    border-radius: 50%;
+    right: 20px;
+    bottom: 200px;
+    cursor: pointer;
+    transition: all 2s;
+}
+
+footer .arrowUp:hover {
+    background-color: transparent;
+    border: 2px solid rgba(255, 127, 80, 0.5);
+}
+
+footer .arrowUp > i {
+    font-size: 1.2em; 
+    font-weight: bolder;
+    color: coral;
+}
+
 
 .stagingOne {
     display: flex;
@@ -362,10 +387,24 @@ main {
         padding-left:50px;
     }
 
+    header nav ul li {
+        border-bottom: 1px solid white;
+        border-right: 2px solid white;
+    }
+    header nav ul > li > a:hover {
+        background: white;
+        color: coral;
+        letter-spacing: 8px;
+        transition: all 1s;
+        font-size: 1em;
+    }
+
     header nav ul li > a {
-    font-size: 1em;
-    border-radius:0;
-    padding: 2em 100% 2em 3em;
+        font-size: 1em;
+        border-radius:0;
+        padding: 2em 100% 2em 3em;
+        color: white;
+        font-weight: bolder;
     }
 
     header> nav > .checkBtn {
@@ -375,8 +414,8 @@ main {
     header nav ul {
         position: fixed;
         max-width: 400px;
-        height: 100vh;
-        background-color: gray;
+        height: 50vh;
+        background-color: rgba(128, 128, 128, 0.9);
         top: 80px;
         left: -100%;
         z-index: 1111;
@@ -399,7 +438,6 @@ main {
      /* MAIN CONTENT DESIGN */
      .landingPageMain{
         width: 90%;
-        padding-bottom: 1.5em;
         margin: auto;
         padding-top: 6em;
         gap: 20px;
@@ -411,7 +449,6 @@ main {
 
     .landingPageMain .landing-page-text p{
        padding: 10px;
-       border: 1px solid black;
        display: block;
        font-size: 0.98em;
        line-height: 25px;
@@ -469,8 +506,6 @@ main {
     header nav ul {
         position: fixed;
         max-width: 400px;
-        height: 100vh;
-        background-color: gray;
         top: 80px;
         left: -100%;
         z-index: 1111;
@@ -493,7 +528,6 @@ main {
     /* MAIN CONTENT DESIGN */
     .landingPageMain{
         width: 90%;
-        padding-bottom: 1.5em;
         margin: auto;
         padding-top: 6em;
         gap: 20px;
@@ -505,7 +539,6 @@ main {
 
     .landingPageMain .landing-page-text p{
        padding: 10px;
-       border: 1px solid black;
        display: block;
        font-size: 0.98em;
        line-height: 25px;
@@ -536,6 +569,12 @@ main {
     
     .landingPageMain > .landing-page-food .foodies .food .food-container img {
         width: 100%;
+    }
+
+    /* SCROLL-UP BUTTON  */
+    footer .arrowUp{
+      bottom: 452px;
+      right: 3px;
     }
 }
 
@@ -562,8 +601,6 @@ main {
 
     header nav ul {
         position: fixed;
-        height: 100vh;
-        background-color: gray;
         top: 80px;
         left: -100%;
         z-index: 1111;
@@ -580,12 +617,10 @@ main {
     .landingPageMain{
         flex-direction: column;
         width: 90%;
-        padding-bottom: 1.5em;
         margin: auto;
         padding-top: 6em;
 
     }
-
     .landingPageMain .landing-page-text {
         order: 2;
         width: 100%;
@@ -593,7 +628,6 @@ main {
 
     .landingPageMain .landing-page-text p{
        padding: 10px;
-       border: 1px solid black;
        display: block;
        font-size: 0.98em;
        line-height: 25px;
@@ -603,8 +637,6 @@ main {
     .landingPageMain > .landing-page-food {
         width: 100%;
         order: 1;
-        /* justify-content: center; */
-        /* padding: 5px; */
     }
     
     .landingPageMain > .landing-page-food .foodies .food {
@@ -628,6 +660,47 @@ main {
     .landingPageMain > .landing-page-food .foodies .food .food-container img {
         width: 100%;
     }
+
+    /* SCROLL-UP */
+    footer .arrowUp{
+        position: fixed;
+        bottom: 470px;
+        right: 10px;
+    }
+
+       /* FOOTER */
+       footer section {
+        display: flex;
+        flex-direction: column;
+        padding: 15;
+        gap: 15px;
+    }
+    
+    footer section .details {
+        border: 1px solid aliceblue;
+        text-align: center;
+        width: 100%;
+        gap: 20px;
+  }
+
+  footer section .details .summary{
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+  footer section .details .media {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap:nowrap;
+    gap: 15px;
+}
+
+footer .author {
+    width: 100%;
+    gap: 5px;
+    flex-direction: column;
+    text-align: center;
+ }
 }
 
 
@@ -641,6 +714,7 @@ main {
         position: fixed;
         z-index: 1111;
     }
+
     header nav ul li > a {
     font-size: 1em;
     border-radius:0;
@@ -654,9 +728,6 @@ main {
 
     header nav ul {
         position: fixed;
-        /* max-width: 250px; */
-        height: 100vh;
-        background-color: gray;
         top: 80px;
         left: -100%;
         z-index: 1111;
@@ -672,7 +743,6 @@ main {
     .landingPageMain{
         flex-direction: column;
         width: 90%;
-        padding-bottom: 22.5em;
         margin: auto;
         padding-top: 6em;
 
@@ -681,11 +751,11 @@ main {
     .landingPageMain .landing-page-text {
         order: 2;
         width: 100%;
+        margin-bottom: 5px;
     }
 
     .landingPageMain .landing-page-text p{
        padding: 10px;
-       border: 1px solid black;
        display: block;
        font-size: 0.98em;
        line-height: 25px;
@@ -718,4 +788,46 @@ main {
     .landingPageMain > .landing-page-food .foodies .food .food-container img {
         width: 100%;
     }
+
+    /* SCROLL - UP */
+    footer .arrowUp{
+        position: fixed;
+        bottom: 650px;
+        right: 10px;
+    }
+
+
+    /* FOOTER */
+    footer section {
+        display: flex;
+        flex-direction: column;
+        padding: 15;
+        gap: 15px;
+    }
+    
+    footer section .details {
+        border: 1px solid aliceblue;
+        text-align: center;
+        width: 100%;
+        gap: 20px;
+  }
+
+  footer section .details .summary{
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+  footer section .details .media {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap:nowrap;
+    gap: 15px;
+}
+
+footer .author {
+    width: 100%;
+    gap: 5px;
+    flex-direction: column;
+    text-align: center;
+ }
 }
