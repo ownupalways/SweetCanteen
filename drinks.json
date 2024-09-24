@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "name":"Minerals",
+        "image":"image/drinks/1.png"
+    },
+    {
+        "id":2,
+        "name":"Minerals",
+        "image":"image/drinks/coffee.png"
+    },
+    {
+        "id":3,
+        "name":"Minerals",
+        "image":"image/drinks/beer.png"
+    }
+]
