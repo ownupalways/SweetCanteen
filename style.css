@@ -1,0 +1,1027 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+}
+
+
+/* WORK FOR TODAY 12TH JULY 2024 */
+/* Header and Menu Styling */
+header {
+    width: 100%;
+    background-color: coral;
+    position: fixed;
+    transition: all 0.8s;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+header > .logo {
+    padding: 0 50px;
+    line-height: 80px;
+    color: aliceblue;
+}
+
+header > nav {
+    float: right;
+    margin-right: 5em;
+    line-height: 80px;
+}
+
+header > nav > .checkBtn {
+    font-size: 1.4em;
+    color: aliceblue;
+    float: right;
+    line-height: 80px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+header > nav > #check {
+    display: none;
+}
+
+
+header nav ul > li, .hoverContainer {
+    display: inline-block;
+    margin-right: 1em;
+    /* width: 100px; */
+}
+
+header nav ul > li > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+header nav ul > li > a:hover {
+    background: white;
+}
+
+article {
+    width: 300px;
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+article > section {
+    padding: 0.5em;
+}
+
+article > section > img {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+article > section > div {
+    padding: .5em;
+}
+
+header > nav .hoverContainer {
+    width: 180px;
+    position: relative;
+}
+
+header > nav .hoverContainer > button {
+    border: none;
+    outline: none;
+    background-color: green;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
+
+header > nav .hoverContainer > div {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+    background: white;
+    box-shadow: 4px  8px 16px black;
+    top: 60px;
+    line-height: 60px;
+}
+
+header > nav .hoverContainer:hover > div {
+    display: block;
+}
+
+
+header > nav .hoverContainer > div > a {
+    display: block;
+    text-decoration: none;
+    padding: 0 2px 0 10px;
+    color: purple;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header > nav .hoverContainer > div > a:hover {
+    background-color: rgb(86, 219, 86);
+    color: white;
+}
+/* ORDER BASKET */
+header .order-icon {
+    line-height: 80px;
+    margin-right: 50px;
+    position: relative;
+}
+
+header .order-icon .fa-shopping-cart  {
+    color: rgb(32, 26, 27);
+    font-size: 1.2em;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+header .order-icon .orderListLabel  {
+    position: absolute;
+    top: 38px;
+    left: 18px;
+    background-color: green;
+    width: 17px;
+    height:17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .order-icon:hover .fa-shopping-cart{
+    background-color: rgba(240, 248, 255, 0.5);
+}
+
+/* ORDER SECTION */
+.orderListItem {
+    width: 350px;
+    background-color: purple;
+    color: white;
+    position: fixed;
+    inset: 80px -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    height: 87vh;
+    transition: all .5s;
+}
+
+body.showOrderItemsContainer .orderListItem {
+    inset: 80px 0 0 auto;
+}
+
+body.showOrderItemsContainer .drinkPage {
+    transform: translateX(-250px);
+}
+
+.orderListItem .orderList {
+    overflow: auto;
+}
+.orderList::-webkit-scrollbar {
+    width: 0;
+}
+.orderListItem .orderBtn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.orderListItem .orderBtn .btn {
+    background-color: rgba(151, 169, 185, 0.5);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.orderListItem .orderBtn .closeBtn {
+    background-color: black;
+}
+
+.orderListItem .orderList .singleOrder {
+    display: grid;
+    grid-template-columns: 60px 100px 60px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.orderListItem .orderList .singleOrder  .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: aliceblue;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.orderListItem .orderList .singleOrder .quantity span:nth-child(1):hover{
+    background-color:rgb(202, 54, 54);
+    color: white;
+}
+
+.orderListItem .orderList .singleOrder  .quantity span:nth-child(3):hover{
+    background-color: rgb(70, 189, 70);
+    color: white;
+}
+
+.orderListItem .orderList .singleOrder .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: white;
+}
+
+.orderListItem .orderList .singleOrder .quantity span i {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 5px;
+}
+
+.orderListItem .orderList .singleOrder:nth-child(even) {
+    background-color: rgb(157, 84, 157);;
+}
+.orderListItem .orderList .singleOrder .itemImage img {
+    width: 100%;
+}
+
+/* DROPDOWN IN DROPDOWN */
+.hoverContainer > div > div {
+    width: 100%;
+    position: relative;
+}
+header > nav .hoverContainer > div > div > button {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    color: purple;
+    padding: 20px 20px 20px 10px;
+    text-align: left;
+    font-size: 1.1em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+header > nav .hoverContainer > div > div > button:hover {
+    background-color: rgb(86, 219, 86);
+    color: white;
+}
+
+header > nav .hoverContainer > div > div> div {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    background: white;
+    box-shadow: 4px  8px 16px black;
+    transition: all 15s;
+    margin-left: 160px;
+    top: 0;
+    line-height: 40px;
+    /* overflow: hidden; */
+}
+
+header > nav .hoverContainer > div > div >div > a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: purple;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header > nav  .hoverContainer > div > div > div> a:hover {
+    background-color: rgb(86, 219, 86);
+    color: white;
+}
+
+header > nav .hoverContainer > div >:hover > div {
+    display: block;
+}
+
+.landingPageMain :not(.foodPage){
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    /* padding-top: 8em; */
+    /* margin: auto; */
+}
+.landingPageMain .foodPage {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landingPageMain .landing-page-text {
+    padding: 5px 10px auto;
+    width: 550px;
+    margin: auto;
+    margin-top: 0;
+}
+
+.landingPageMain .landing-page-text> p {
+    padding: 0 40px 10px 10px;
+    line-height: 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.3em;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingPageMain > .landing-page-food .foodies{
+    display: flex;
+    flex-direction: column;
+    /* overflow-y:scroll; */
+}
+
+.landingPageMain > .landing-page-food .foodies .food {
+    display: flex;
+    border: 2px solid rgba(192, 184, 184, 0.5);
+    width: 600px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 8px 10px 8px gray;
+    margin-bottom: 25px;
+}
+
+.landingPageMain > .landing-page-food .foodies .food .little-tex {
+    font-size: 1em;
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+    line-height: 25px;
+    padding: 40px;
+    word-spacing: 5px;
+}
+
+.landingPageMain > .landing-page-food .foodies .food .food-container {
+    flex: 3 0 190px;
+    border-radius: 0 8px 8px 0;
+}
+
+.landingPageMain > .landing-page-food .foodies .food .food-container img {
+    width: 100%;
+}
+
+/* DRINK PAGE */
+.drinkPage {
+    padding-top: 5em;
+    transition: transform 0.5s;
+}
+.drinkPage .softDrinks {
+    max-width: 100%; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.drinkPage .softDrinks .minerals {
+    max-width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.drinkPage .softDrinks .minerals img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.drinkPage .drinkOrder {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    scale: 0;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    transition: all 1.5s;
+}
+
+.drinkPage .drinkOrder .orderPage {
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 15px;
+    gap: 20px;
+    background-color: azure;
+    border-radius: 10px;
+}
+
+.drinkPage .drinkOrder #drinkTypeImage {
+    max-width:90px;
+    height: 60px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+.drinkPage .drinkOrder #drinkTypeImage img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .drinkPage .drinkOrder .placeOrderContainer {
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* box-shadow: 4px 8px 12px gray; 
+} */
+
+.drinkPage .drinkOrder .orderPage > form {
+    width: 250px;
+    border-radius: 4px;
+    margin: 5px 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border:1px solid black;
+    padding: 10px 20px 5px 20px;
+}
+
+.drinkPage .drinkOrder .orderPage > form .inputTab {
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.drinkPage .drinkOrder .orderPage > form input {
+    /* outline:none; */
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 2px 5px 5px;
+}
+.drinkPage .drinkOrder .orderPage > form > button {
+    padding: 8px 0;
+    border-radius: 5px;
+}
+
+input:focus {
+    border: 0.5px solid blue;
+}
+
+/* DRINK FRIDGE KEY */
+.fridgeWelcome {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color:rgba(14, 13, 13, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 2s;
+}
+
+.fridgeWelcome .fridgeText {
+    display: flex;
+    justify-content: center;
+    row-gap: 50px;
+    align-items: center;
+    flex-direction: column;
+    font-size: 3em;
+    position: relative;
+    width: 80%;
+}
+.fridgeWelcome .fridgeText .insideText {
+    position: absolute;
+    top: 100px;
+    text-align: center;
+    display: flex;
+    row-gap: 50px;
+    flex-direction: column;
+}
+.fridgeWelcome .fridgeText .fridgeKey {
+    min-width: 300px;
+    padding: 10px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 26em;
+    transition: all 0.3s;
+    cursor: pointer;
+    /* font-size: 0.2em; */
+    font-weight: bold;
+}
+
+.fridgeWelcome .fridgeText .fridgeKey:hover {
+    letter-spacing: 5px;
+    box-shadow: 4px 8px 5px green;
+}
+
+/* Footer styling */
+footer {
+    width: 100%;
+    background-color: rgb(37, 36, 36);
+    /* position: fixed; */
+    bottom: 0;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+footer section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.2em 2em;
+}
+
+footer details {
+    width: 200px;
+}
+footer details summary {
+    width: 100%;
+    list-style: none;
+    font-size: 1.2em;
+    margin-bottom: .7em;
+}
+footer details  > ul {
+    width: auto;
+}
+
+
+footer details > ul > li {
+    list-style: none;
+    line-height: 2;
+    font-size: 1em;
+}
+
+footer details ul > li > a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+footer details ul > li > a:hover {
+    letter-spacing: 2px;
+}
+
+footer details .media {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 150px;
+}
+
+footer details ul li > a > i {
+    color: white;
+    font-size: 1.3em;
+    padding: 0.3em;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer details ul li > a > i:hover {
+    background: gray;
+}
+
+footer .author {
+    margin-right: 3em;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+footer .author > div
+
+/* LOGIN AND REGISTER LANDING PAGE */
+main {
+    position: relative;
+}
+
+.stagingOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(image/2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.stagingOne .btnContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+
+.stagingOne .btnContainer .btn {
+    width: 30em;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+}
+
+
+@media (max-width:992px) {
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+
+    header> .logo {
+        font-size: 30px;
+        padding-left:50px;
+    }
+
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+        position: absolute;
+        right: 30px;
+    }
+
+    header .order-icon {
+        position: absolute;
+        right: 60px;
+    }
+
+    header nav ul {
+        position: fixed;
+        max-width: 400px;
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 400px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    header nav ul li{
+        display: block;
+        margin-right: 0;
+        padding: 0;
+        width: 100%;
+    }
+   
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+     /* MAIN CONTENT DESIGN */
+     .landingPageMain{
+        width: 90%;
+        padding-bottom: 1.5em;
+        margin: auto;
+        padding-top: 6em;
+        gap: 20px;
+    }
+
+    .landingPageMain .landing-page-text {
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+
+    header> .logo {
+        font-size: 30px;
+        padding-left:50px;
+    }
+
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+    }
+
+    header nav ul {
+        position: fixed;
+        max-width: 400px;
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 300px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-right: 0;
+        padding: 0;
+        width: 100%;
+    }
+   
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    /* MAIN CONTENT DESIGN */
+    .landingPageMain{
+        width: 90%;
+        padding-bottom: 1.5em;
+        margin: auto;
+        padding-top: 6em;
+        gap: 20px;
+    }
+
+    .landingPageMain .landing-page-text {
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    header .logo {
+        font-size: 30px;
+        padding-left:10px;
+    }
+   
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+    }
+
+    header nav ul {
+        position: fixed;
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 50px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    /* MAIN CONTENT DESIGN */
+    .landingPageMain{
+        flex-direction: column;
+        width: 90%;
+        padding-bottom: 1.5em;
+        margin: auto;
+        padding-top: 6em;
+
+    }
+
+    .landingPageMain .landing-page-text {
+        order: 2;
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+        order: 1;
+        /* justify-content: center; */
+        /* padding: 5px; */
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 300px) {
+    header .logo {
+        font-size: 30px;
+        padding-left:10px;
+    }
+   
+    header {
+        position: fixed;
+        z-index: 1111;
+    }
+    header nav ul li > a {
+    font-size: 1em;
+    border-radius:0;
+    padding: 2em 100% 2em 3em;
+    }
+
+    header> nav > .checkBtn {
+        display: block;
+    }
+
+    header nav ul {
+        position: fixed;
+        /* max-width: 250px; */
+        height: 100vh;
+        background-color: gray;
+        top: 80px;
+        left: -100%;
+        z-index: 1111;
+        width: calc(100% - 50px);
+        transition: all 0.5s;
+        overflow: hidden;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    .landingPageMain{
+        flex-direction: column;
+        width: 90%;
+        padding-bottom: 10.5em;
+        margin: auto;
+        padding-top: 6em;
+
+    }
+
+    .landingPageMain .landing-page-text {
+        order: 2;
+        width: 100%;
+    }
+
+    .landingPageMain .landing-page-text p{
+       padding: 10px;
+       border: 1px solid black;
+       display: block;
+       font-size: 0.98em;
+       line-height: 25px;
+       text-align: left
+    }
+
+    .landingPageMain > .landing-page-food {
+        width: 100%;
+        order: 1;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food {
+        width: 100%;
+        height: 100px;
+        box-shadow: 5px 5px 2px gray;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .little-tex {
+        font-size: 0.6em;
+        line-height: 15px;
+        padding:  10px;
+        word-spacing: 2px;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container {
+        flex: 2 0 150px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    .landingPageMain > .landing-page-food .foodies .food .food-container img {
+        width: 100%;
+    }
+}
