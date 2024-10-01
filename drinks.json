@@ -2,16 +2,19 @@
     {
         "id":1,
         "name":"Minerals",
-        "image":"image/drinks/1.png"
+        "image":"image/drinks/1.png",
+        "price": "400"
     },
     {
         "id":2,
-        "name":"Minerals",
-        "image":"image/drinks/coffee.png"
+        "name":"Coffee",
+        "image":"image/drinks/coffee.png",
+        "price": "200"
     },
     {
         "id":3,
-        "name":"Minerals",
-        "image":"image/drinks/beer.png"
+        "name":"Beer",
+        "image":"image/drinks/beer.png",
+        "price": "1500"
     }
 ]

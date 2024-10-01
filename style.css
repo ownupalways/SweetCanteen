@@ -20,6 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     z-index: 1;
+    top:0;
 }
 
 header > .logo {
@@ -173,15 +174,29 @@ header .order-icon:hover .fa-shopping-cart{
 
 /* ORDER SECTION */
 .orderListItem {
-    width: 350px;
+    width: 300px;
     background-color: purple;
     color: white;
     position: fixed;
     inset: 80px -400px 0 auto;
     display: grid;
-    grid-template-rows: 70px 1fr 70px;
+    grid-template-rows: 30px 1fr 60px 50px;
     height: 87vh;
     transition: all .5s;
+    z-index: 1;
+}
+
+.orderListItem > h1 {
+    padding: 0px 0 5px 8px;
+    border: 1px solid white;
+    display: grid;
+    align-items: center;
+    box-shadow: -3px 2px 4px white;
+    width: 97%;
+    margin: auto;
+    background: purple;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 body.showOrderItemsContainer .orderListItem {
@@ -194,10 +209,44 @@ body.showOrderItemsContainer .drinkPage {
 
 .orderListItem .orderList {
     overflow: auto;
+    padding-top: 15px;
+    position: initial;
+    z-index: -1;
 }
+
 .orderList::-webkit-scrollbar {
     width: 0;
 }
+
+.orderListItem .totalInOrder {
+    border: 1px solid white;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 100px 1fr;
+  box-shadow: -3px -2px 4px white;
+  width: 95%;
+  margin: auto;
+  margin-bottom: auto;
+  grid-auto-rows: 52px;
+  margin-bottom: 0;
+  border-radius: 5px;
+  transition: all 1s;
+  padding: 0 5px;
+  font-size: 1.1em;
+  position: relative;
+  /* right: -100%; */
+}
+
+.orderListItem .totalInOrder > span {
+    box-shadow: 4px 2px 4px whitesmoke;
+    border-radius: 8px;
+    padding: 5px;
+    width: auto;
+    font-size: 1.4em;
+    border-top: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+}
+
 .orderListItem .orderBtn {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -217,7 +266,7 @@ body.showOrderItemsContainer .drinkPage {
 
 .orderListItem .orderList .singleOrder {
     display: grid;
-    grid-template-columns: 60px 100px 60px 1fr;
+    grid-template-columns: 40px 80px 50px 1fr;
     gap: 10px;
     text-align: center;
     align-items: center;
@@ -257,8 +306,17 @@ body.showOrderItemsContainer .drinkPage {
 .orderListItem .orderList .singleOrder:nth-child(even) {
     background-color: rgb(157, 84, 157);;
 }
+
+.orderListItem .orderList .singleOrder .itemImage {
+    border-radius: 4px;
+    margin: 5px;
+    overflow: hidden;
+    border: 2px solid aliceblue;
+    height: 30px;
+}
 .orderListItem .orderList .singleOrder .itemImage img {
     width: 100%;
+    height: 100%;
 }
 
 /* DROPDOWN IN DROPDOWN */
@@ -316,49 +374,105 @@ header > nav .hoverContainer > div >:hover > div {
     display: block;
 }
 
-.landingPageMain :not(.foodPage){
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    /* padding-top: 8em; */
-    /* margin: auto; */
+.landingPageMain{
+   columns: 300px;
+    padding-top: 90px;
+    display:grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
 }
-.landingPageMain .foodPage {
+
+.landingPageMain .landing-page-food {
     margin-bottom: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
     justify-content: space-between;
 }
 
-.landingPageMain .landing-page-text {
-    padding: 5px 10px auto;
-    width: 550px;
-    margin: auto;
-    margin-top: 0;
+.landing-page-text {
+    padding-top: 80px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: none;
+    justify-content: center;
+    transition: all 1s;
+    scale: 0;
+    transition-delay: 3000ms;
 }
 
-.landingPageMain .landing-page-text> p {
-    padding: 0 40px 10px 10px;
-    line-height: 40px;
-    font-family: "Cormorant Garamond", serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.3em;
-    text-align: justify;
+.landing-page-text .textInsideCloseBtn {
+    position: absolute;
+    inset: 2px 5px 0 auto;
+    border: 1px solid aliceblue;
+    color: aliceblue;
+    border-radius: 50%;
+    padding: 5px;
+    width: 15px;
+    height: 15px;
+    font-size: 1.1em;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
+.showIt{
+    opacity:1;
+    filter:blur(0);
+    transform: translateX(0)
+}
+
+.landing-page-text .fa-xmark:hover {
+   rotate:180deg;
+}
+.landing-page-text .textInside {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+    width: 400px;
+    height: 400px;
+    padding: 40px 40px 0 40px;
+    margin-top:60px;
+    line-height: 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    position: relative;
+    transition: all 1s;
+    left: -100%;
+    font-size: 1.3em;
+    border-radius: 10px;
+    box-shadow: 4px 2px 8px white;
+    /* opacity: 0;
+    filter:blur(5px);
+    transform: translateX(-100%); */
+    transition-delay: 3800ms;
+}
+
+.textInside .rateHere {
+    border: none;
+    text-decoration: underline;
+    background-color: transparent;
+    color: aliceblue;
+    font-size: 1em;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
 .landingPageMain > .landing-page-food .foodies{
-    display: flex;
-    flex-direction: column;
-    /* overflow-y:scroll; */
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
 }
 
 .landingPageMain > .landing-page-food .foodies .food {
+    aspect-ratio: 5/2;
     display: flex;
     border: 2px solid rgba(192, 184, 184, 0.5);
-    width: 600px;
     height: 150px;
     border-radius: 8px;
     overflow: hidden;
@@ -390,7 +504,6 @@ header > nav .hoverContainer > div >:hover > div {
 }
 .drinkPage .softDrinks {
     max-width: 100%; 
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -713,10 +826,10 @@ main {
         gap: 20px;
     }
 
-    .landingPageMain .landing-page-text {
+    /* .landingPageMain .landing-page-text {
         width: 100%;
-    }
-
+    } */
+/* 
     .landingPageMain .landing-page-text p{
        padding: 10px;
        border: 1px solid black;
@@ -724,7 +837,7 @@ main {
        font-size: 0.98em;
        line-height: 25px;
        text-align: left
-    }
+    } */
 
     .landingPageMain > .landing-page-food {
         width: 100%;
@@ -807,18 +920,18 @@ main {
         gap: 20px;
     }
 
-    .landingPageMain .landing-page-text {
+    /* .landingPageMain .landing-page-text {
         width: 100%;
-    }
+    } */
 
-    .landingPageMain .landing-page-text p{
+    /* .landingPageMain .landing-page-text p{
        padding: 10px;
        border: 1px solid black;
        display: block;
        font-size: 0.98em;
        line-height: 25px;
        text-align: left
-    }
+    } */
 
     .landingPageMain > .landing-page-food {
         width: 100%;
@@ -893,19 +1006,19 @@ main {
 
     }
 
-    .landingPageMain .landing-page-text {
+    /* .landingPageMain .landing-page-text {
         order: 2;
         width: 100%;
-    }
+    } */
 
-    .landingPageMain .landing-page-text p{
+    /* .landingPageMain .landing-page-text p{
        padding: 10px;
        border: 1px solid black;
        display: block;
        font-size: 0.98em;
        line-height: 25px;
        text-align: left
-    }
+    } */
 
     .landingPageMain > .landing-page-food {
         width: 100%;
@@ -984,7 +1097,7 @@ main {
 
     }
 
-    .landingPageMain .landing-page-text {
+    /* .landingPageMain .landing-page-text {
         order: 2;
         width: 100%;
     }
@@ -996,7 +1109,7 @@ main {
        font-size: 0.98em;
        line-height: 25px;
        text-align: left
-    }
+    } */
 
     .landingPageMain > .landing-page-food {
         width: 100%;
@@ -1024,4 +1137,59 @@ main {
     .landingPageMain > .landing-page-food .foodies .food .food-container img {
         width: 100%;
     }
+}
+
+.swallow {
+    padding-top: 100px;
+    margin: 10px;
+    container-type: inline-size;
+}
+
+@container (width > 300px) {
+    .swallowFoodies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .swallow .food {
+        flex: 1 0 280px;
+    }
+
+    .little-tex {
+        font-size: clamp(0.5rem, 0.5rem + 1cqw, 1rem );
+        padding-top: 50px;
+    }
+}
+
+.swallow .food {
+    aspect-ratio: 16/9;
+    margin-block-end: 1em;
+    display: grid;
+    grid-template-columns:1fr 150px ;
+    grid-template-rows:70px;
+    border: 2px solid rgba(192, 184, 184, 0.5);
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 8px 10px 8px gray;
+    /* margin-bottom: 25px */
+}
+
+.swallow .food .little-tex {
+    /* display: flex;
+    justify-content: center;
+    place-items: center; */
+    text-align: center;
+    padding: 20px;
+}
+
+.swallow .food .food-container{
+height: inherit;
+}
+.swallow .food .food-container img {
+    width: 100%;
+    height: 100%;
 }
